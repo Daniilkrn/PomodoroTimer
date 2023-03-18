@@ -18,7 +18,7 @@ import LongTimer from './timers/longTimer';
 import {FiSettings} from 'react-icons/fi'
 
 const Timer = () => {    
-    // const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
+    const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
     const defaultBrake = useSelector(state => state.sessions.countDefaultBrake);
     const flag = useSelector(state => state.sessions.flag);
@@ -122,6 +122,7 @@ const Timer = () => {
             setIsStart(false)
             setCountStack(countStack)
             setCount(0)
+            dispatch(setflagToSettingLT(!defaultSetflagToSettingLT))
         } 
     },[longBrake])
 
@@ -131,7 +132,7 @@ const Timer = () => {
             isStart && count != defaultSetSetterLongTImer && setMinutesBlock((minutesBlock) => minutesBlock >=1 ? minutesBlock - 1 : 0)
             brake && isStart && count != defaultSetSetterLongTImer && setMinutesBlockBrake((minutesBlockBrake) => minutesBlockBrake >=1 ? minutesBlockBrake - 1 : 0)
             count == defaultSetSetterLongTImer && isStart && setLongBrake((longBrake) => longBrake >=1 ? longBrake - 1 : 0)
-        },100)
+        },1000)
         if(isStart || brake || count == defaultSetSetterLongTImer){
             setCorrectBtn({
                 opacity:'0.5',
