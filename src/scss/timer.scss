@@ -403,6 +403,10 @@
             }
         }
         .stop_start{
+            .start{
+                padding: 30px 40px !important;
+                font-size: 20px;
+            }
             .stop{
                 padding: 30px 40px !important;
                 font-size: 20px;
@@ -427,9 +431,15 @@
     }
     .nav{
         .nav_content{
+            padding-bottom: 30px;
             .buttons{
                 display: flex !important;
                 flex-direction: column;
+                margin: 0 !important; 
+            }
+            .start{
+                font-size: 20px !important;
+                padding: 30px 64px !important;
                 margin: 0 !important; 
             }
             .stop{

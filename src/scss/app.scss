@@ -232,14 +232,20 @@ header{
             .set_autoPlayBrake{
                 .checkbox{
                     .checker_box{
-                        width: 80%;
+                        width: 55%;
+                    }
+                    .checker_box_non{
+                        width: 60%;
                     }
                 }
             }
             .set_autoPlayLongTimer{
                 .checkbox{
+                    .checker_box{
+                        width: 55%;
+                    }
                     .checker_box_non{
-                        width: 90%;
+                        width: 60%;
                     }
                 }
             }
@@ -282,4 +288,67 @@ header{
     }
 }
 
+@media (max-width: 590px){
+    .settings__container {
+        &.burger{
 
+        }
+        .list_settings{
+            .set_autoPlayBrake{
+                .checkbox{
+                    .checker_box{
+                        min-width: 70px;
+                    }
+                    .checker_box_non{
+                        min-width: 70px;
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
+                .checkbox{
+                    .checker_box{
+                        min-width: 70px;
+                    }
+                    .checker_box_non{
+                        min-width: 70px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .settings__container {
+        &.burger{
+
+        }
+        .list_settings{
+            .set_autoPlayBrake{
+                .checkbox{
+                    .checker_box{
+                        min-width: 60px;
+                    }
+                    .checker_box_non{
+                        min-width: 60px;
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
+                .checkbox{
+                    .checker_box{
+                        min-width: 60px;
+                    }
+                    .checker_box_non{
+                        min-width: 60px
+                    }
+                }
+            }
+        }
+    }
+    .nav{
+        .set_timer{
+            display: none !important;
+        }
+    }
+}

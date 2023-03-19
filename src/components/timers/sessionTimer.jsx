@@ -3,7 +3,8 @@ import {GiTomato} from 'react-icons/gi'
 
 const SessionTimer = ({minutes,seconds,countPomodoro}) => {
 
-   
+
+
     return(
         <div className="timer_circle">
             <p className="counterPomodoro">{`pomodoros: ${countPomodoro}`}
@@ -13,6 +14,7 @@ const SessionTimer = ({minutes,seconds,countPomodoro}) => {
                 <span>{minutes}</span>
                 <span>:</span>
                 <span>{seconds}</span>
+        
             </div>
         </div>
     )

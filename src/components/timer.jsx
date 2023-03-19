@@ -20,7 +20,6 @@ import {FiSettings} from 'react-icons/fi'
 
 const Timer = () => {    
     const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
-    console.log(defaultClickedFlagBurger);
     const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
     const defaultBrake = useSelector(state => state.sessions.countDefaultBrake);
