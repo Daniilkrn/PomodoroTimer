@@ -98,6 +98,71 @@ header{
 .header__container{
     justify-content: flex-start !important;
     align-items: center;
+    justify-content: space-between !important;
+    .menu_container{
+        .menu_content{
+            a:last-child{
+                display: flex !important;
+            }
+        }
+    }
+    .burger_menuNone{
+        background-color: red !important;
+    }
+    .burger_menu{
+        z-index: 110;
+        align-items: center;
+        border-radius: 0.7em;
+        padding-right: 40px !important;
+        cursor: pointer;
+        display: none !important;
+        justify-content: center;
+        min-height: 60px;
+        padding: 0 18px;
+        span {
+            background-color: #fff;
+            display: flex;
+            height: 2px;
+            justify-content: center;
+            left: 0;
+            position: relative;
+            top: 0;
+            width: 30px;
+            width: 24px;
+        }
+        span::before {
+            background-color: #f5f3f3;
+            bottom: 10px;
+            content: "";
+            height: 2px;
+            left: 0;
+            position: absolute;
+            width: 24px;
+        }
+        span::after {
+            background-color: #fff;
+            content: "";
+            height: 2px;
+            left: 0;
+            position: absolute;
+            top: 10px;
+            width: 24px;
+        }
+        
+    }
+    @media (max-width: 850px){
+        .burger_menu{
+            z-index: 110;
+            display: flex !important;
+        }
+        .menu_container{
+            .menu_content{
+                a:last-child{
+                    display: none !important;
+                }
+            }
+        }
+    }
 }
 
 .header_containerDuo{
@@ -157,4 +222,64 @@ header{
         padding: 40px;
     }
 }
+
+@media (max-width: 850px){
+    .settings__container {
+        &.burger{
+
+        }
+        .list_settings{
+            .set_autoPlayBrake{
+                .checkbox{
+                    .checker_box{
+                        width: 80%;
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
+                .checkbox{
+                    .checker_box_non{
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+    .content__container{
+        .timer{
+            max-width: 80% !important;
+            .percent{
+                font-size: 20px !important;
+            }
+  
+            .desc{
+                p{
+                    font-size: calc(18px + 4 * (100vw / 850)) !important
+                }
+            }
+            .nav-plus-content{
+                .counterPomodoro{
+                    font-size: 20px !important;
+                }
+                .timer_body{
+                    font-size: 80px !important;
+                }
+            }
+            .nav{
+                padding: 30px 40px;
+                .set_timer{
+                    .toSetting{
+                        p{
+                            display: none !important;
+                        }
+                        .setting{
+                            width: auto !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 

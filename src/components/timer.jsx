@@ -13,11 +13,14 @@ import { setDefaultSession, setflagToSettingLT } from '../store/reducers2/sessio
 import { setModalSettingFromTimer } from '../store/reducers2/popUpChecker';
 import { setClickedFlag } from '../store/reducers2/popUpChecker';
 import { setStartedDeafult } from '../store/reducers2/musicTimerDepend';
+import { setClickedFlagBurger } from '../store/reducers2/popUpChecker';
 import '../scss/timer.scss'
 import LongTimer from './timers/longTimer';
 import {FiSettings} from 'react-icons/fi'
 
 const Timer = () => {    
+    const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
+    console.log(defaultClickedFlagBurger);
     const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
     const defaultBrake = useSelector(state => state.sessions.countDefaultBrake);
@@ -223,6 +226,7 @@ const Timer = () => {
                                 <div className="toSetting"  onClick={() => {
                                             dispatch(setModalSettingFromTimer(true))
                                             dispatch(setClickedFlag(true))
+                                            dispatch(setClickedFlagBurger(true))
                                         }}>
                                     <p>Settings</p>
                                     <div className="setting">

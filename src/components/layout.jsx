@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import MusicPlayer from '../components/musicPlayer/musicPlayer';
 import { useRef, React} from 'react';
 import { useSelector } from 'react-redux';
+import MenuBurger from './MenuBurger/menuBurger';
 
 function Layout() {
     const refApp = useRef()
@@ -16,6 +17,7 @@ function Layout() {
             <header>
               <div className='header__container'>
                 <MenuNav refHeight={refApp}></MenuNav>
+                <MenuBurger></MenuBurger>
               </div>
             </header>
             <main>

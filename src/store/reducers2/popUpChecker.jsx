@@ -7,6 +7,7 @@ export const popUpChecker = createSlice({
     checked: false,
     modalSettingFromTimer: false,
     clickedFlag: false,
+    clickedFlagBurger: false,
   },
   reducers: {
     setPopUp(state,action){
@@ -17,10 +18,13 @@ export const popUpChecker = createSlice({
     },
     setClickedFlag(state,action){
       state.clickedFlag = action.payload
+    },
+    setClickedFlagBurger(state,action){
+      state.clickedFlagBurger = action.payload
     }
   },
 })
 
 export default popUpChecker.reducer
 
-export const { setPopUp, setModalSettingFromTimer, setClickedFlag } = popUpChecker.actions
+export const { setPopUp, setModalSettingFromTimer, setClickedFlag, setClickedFlagBurger } = popUpChecker.actions

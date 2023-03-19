@@ -12,11 +12,13 @@ import { setFlagLongTimer } from "../../../store/reducers2/autoPlaySettings"
 import { setSetterLongTImer } from "../../../store/reducers2/sessionSlice"
 import { setModalSettingFromTimer } from "../../../store/reducers2/popUpChecker"
 import { setClickedFlag } from "../../../store/reducers2/popUpChecker"
+import { setClickedFlagBurger } from "../../../store/reducers2/popUpChecker"
 import SavePopUp2 from "../../../Pages/savePopUp2"
 import swal from "sweetalert"
 // import { store } from "../../../store/store"
 
 const ModalSettings = ({setModalSetting,}) => {
+    const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
     const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
     const defaultBrake = useSelector(state => state.sessions.countDefaultBrake);
@@ -57,6 +59,7 @@ const ModalSettings = ({setModalSetting,}) => {
             setTimeout(()=>{
                 dispatch(setClickedFlag(false))
                 dispatch(setModalSettingFromTimer(false))
+                dispatch(setClickedFlagBurger(false))
             },500)
         } else {
             swal({
@@ -136,19 +139,15 @@ const ModalSettings = ({setModalSetting,}) => {
             dispatch(setSetterLongTImer(settingSetterLT))
         }
     }
-
+    console.log(defaultClickedFlagBurger);
     return(
-            <div className="settings__container" style={{
-                width: '100%',
-                height: '800px',
-                position: 'absolute',
-                zIndex: '100',
-                marginTop: '82px'
-            }}>
+            <div className={defaultClickedFlagBurger ? "settings__container burger" : "settings__container"}>
                 {
                     spanPopUp ? <SavePopUp2>Save your changes?</SavePopUp2> : ''
                 }
-                <span onClick={spanHandler} className={spanIsClose ? "spanClose" : "spanOpen"}></span>
+                <div className="closeSpanDiv">
+                    <span onClick={spanHandler} className={spanIsClose ? "spanClose" : "spanOpen"}></span>
+                </div>
                 <div className="list_settings">
                     <div className="set_session">
                         <p>Session time</p>
