@@ -289,6 +289,26 @@ header{
 }
 
 @media (max-width: 590px){
+    .list_settings{
+        .set_session{
+            width: auto !important;
+        }
+        .set_brake{
+            width: auto !important;
+        }
+        .set_longTimer{
+            width: auto !important;
+        }
+        .set_autoPlayBrake{
+            width: auto !important;
+        }
+        .set_autoPlayLongTimer{
+            width: auto !important;
+        }
+        .set_counterLongTimer{
+            width: auto !important;
+        }
+    }
     .settings__container {
         &.burger{
 
