@@ -417,13 +417,30 @@
 }
 
 @media (max-width: 478px){
+    .nav-plus-content{
+        .timer_body{
+            font-size: 64px !important;
+        }
+        .timer_circle{
+            min-height: 320px !important;
+        }
+    }
     .nav{
         .nav_content{
+            .buttons{
+                display: flex !important;
+                flex-direction: column;
+                margin: 0 !important; 
+            }
             .stop{
-                padding: 20px 25px !important;
+                padding: 30px 64px !important;
+                margin: 0 !important; 
             }
             .restart_button{
-                padding: 14px 14px !important;
+                margin-right: 0px !important;
+                margin-bottom: 32px !important;
+                padding: 24px 74px !important;
+            
                 svg{
                     padding: 10px !important;
                     width: 40px;
