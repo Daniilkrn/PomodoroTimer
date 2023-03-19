@@ -53,3 +53,20 @@
     }
 }
 
+@media (max-width: 850px) {
+    .savePopUp{
+        white-space: nowrap;
+        position: absolute;
+        top: 40px !important;
+        left: -100px !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 12px;
+        font-size: 24px;
+        transition: 1s ease;
+        .icon{
+            color: green;
+        }
+    }
+}
