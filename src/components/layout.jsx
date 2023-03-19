@@ -29,7 +29,7 @@ function Layout() {
               <div className='footer__container'>
                 <div className='about'>
                   <GiTomato size={80} className="tomato"/>
-                  "The Tomato Method" - a time management technique proposed by Francesco Cirillo in the late 1980s. The technique assumes an increase in work efficiency with less time spent due to deep concentration and short breaks. In the classical technique, the time intervals — "tomatoes" last half an hour: 25 minutes of work and 5 minutes of rest.
+                  <p>"The Tomato Method" - a time management technique proposed by Francesco Cirillo in the late 1980s. The technique assumes an increase in work efficiency with less time spent due to deep concentration and short breaks. In the classical technique, the time intervals — "tomatoes" last half an hour: 25 minutes of work and 5 minutes of rest.</p>
                 </div>
                 <div className='mainPrinciples'>
                   <legend>Basic principles</legend>

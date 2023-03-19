@@ -373,6 +373,11 @@
 
     
 @media (max-width: 910px){
+    .settings__container {
+        &.burger{
+            height: 830vh;
+        }
+    }
     .content_container{
         padding: 20px;
     }
@@ -421,6 +426,11 @@
 }
 
 @media (max-width: 478px){
+    footer{
+        .footer__container{
+            font-size: 16px !important;
+        }
+    }
     .nav-plus-content{
         .timer_body{
             font-size: 64px !important;
