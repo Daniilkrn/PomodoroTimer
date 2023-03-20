@@ -222,16 +222,31 @@ const Timer = () => {
                                         <span className="minus"></span>
                                     </div>
                                 </div>
-                                <div className="toSetting"  onClick={() => {
-                                            dispatch(setModalSettingFromTimer(true))
-                                            dispatch(setClickedFlag(true))
-                                            dispatch(setClickedFlagBurger(true))
+                                {defaultClickedFlagBurger ? ''
+                                    :
+                                    <div className="toSetting2" onClick={() => {
+                                        dispatch(setModalSettingFromTimer(true))
+                                        dispatch(setClickedFlag(true))
                                         }}>
-                                    <p>Settings</p>
-                                    <div className="setting">
-                                        <FiSettings size={38}/>
+                                        <p>Settings</p>
+                                        <div className="setting">
+                                            <FiSettings size={38}/>
+                                        </div>
+                                    </div> 
+                                    
+                                }
+                                {defaultClickedFlagBurger ? '' :
+                                    <div className="toSetting" onClick={() => {
+                                                dispatch(setModalSettingFromTimer(true))
+                                                dispatch(setClickedFlag(true))
+                                                dispatch(setClickedFlagBurger(true))
+                                            }}>
+                                        <p>Settings</p>
+                                        <div className="setting">
+                                            <FiSettings size={38}/>
+                                        </div>
                                     </div>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>
