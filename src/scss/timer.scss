@@ -422,6 +422,7 @@
     .settings__container {
         &.burger{
             height: 830vh;
+            overflow: hidden !important;
         }
     }
     .content_container{
