@@ -412,8 +412,12 @@
 
     
 @media (max-width: 910px){
-    body {
-        overflow: hidden;
+    // body {
+    //     overflow: hidden;
+    // }
+    .list_settings{
+        padding-top: 0;
+        padding-bottom: 40px;
     }
     .settings__container {
         &.burger{
