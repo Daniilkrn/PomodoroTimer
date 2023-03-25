@@ -329,7 +329,12 @@
                             height: 4px; 
                             background: rgb(231, 229, 229);
                         }
+                        .toSetting:hover{
+                            opacity: 0.7;
+                        }
                         .toSetting{
+                            cursor: pointer;
+                            opacity: 0.8;
                             padding: 8px;
                             background-color: #56519b;
                             box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 5px, rgba(0, 0, 0, 0.12) 0px 0px 0px, 
@@ -359,7 +364,11 @@
                                 padding: 4px;
                             }
                         }
+                        .toSetting2:hover{
+                            opacity: 0.7;
+                        }
                         .toSetting2{
+                            cursor: pointer;
                             padding: 8px;
                             background-color: #56519b;
                             box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 5px, rgba(0, 0, 0, 0.12) 0px 0px 0px, 
@@ -403,9 +412,13 @@
 
     
 @media (max-width: 910px){
+    body {
+        overflow: hidden;
+    }
     .settings__container {
         &.burger{
             height: 830vh;
+            overflow-y: hidden !important;
         }
     }
     .content_container{

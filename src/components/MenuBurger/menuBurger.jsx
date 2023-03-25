@@ -13,7 +13,8 @@ const MenuBurger = () => {
     const dispatch = useDispatch();
     
     return (
-        <div className={defaultSetModalSettingFromTimer ? "burger_menuNone" : "burger_menu" } onClick={() => {
+        <div className={defaultSetModalSettingFromTimer ? "burger_menuNone" : "burger_menu" } onClick={(e) => {
+            e.preventDefault()
             dispatch(setModalSettingFromTimer(true))
             dispatch(setClickedFlag(true))
             dispatch(setClickedFlagBurger(true))
