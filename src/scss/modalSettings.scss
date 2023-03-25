@@ -2,6 +2,8 @@
     &.burger{
         z-index: 111;
         background-color: #47b3e9;
+        position: fixed;
+        overflow: hidden !important;
         // background-color: unset;
         width: 100vw;
         height: 669vh;
