@@ -15,7 +15,6 @@ const SavePopUp2 = ({children}) => {
         dispatch(setPopUp(true))
     }
     
-   
     return (
         <div className="savePopUp2">
             <p>{children}</p>

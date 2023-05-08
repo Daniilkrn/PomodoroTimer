@@ -19,6 +19,7 @@ import LongTimer from './timers/longTimer';
 import {FiSettings} from 'react-icons/fi'
 
 const Timer = () => {    
+    
     const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
     const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
@@ -28,11 +29,8 @@ const Timer = () => {
     const flagAutoLongPlay = useSelector(state => state.autoPlay.flagLongTimer);
     const defaultLongBrake = useSelector(state => state.sessions.countDefaultLongTimer);
     const defaultSetSetterLongTImer = useSelector(state => state.sessions.setterLongTImer)
-    /*musicTimerDependencies*/
-    const defaultMusicDependencies = useSelector(state => state.musicDependencies.startedDefault)
+
     /*setModalSettingFromTimer*/
-    const defaultSetModalSettingFromTimer = useSelector(state => state.popUp2.modalSettingFromTimer)
-    const clickedFlag = useSelector(state => state.popUp2.clickedFlag)
     const dispatch = useDispatch();
     
     const [stateCorrectBtn,setCorrectBtn] = useState({})
@@ -56,8 +54,9 @@ const Timer = () => {
     const secondsBrake = padZero(minutesBlockBrake - minutesBrake * 60)
     const minutesLong = padZero(Math.floor(longBrake / 60))
     const secondsLong = padZero(longBrake - minutesLong * 60) 
+
     /*soundEnd*/
-    const [playing, setPlaying] = useState(false)
+    const [, setPlaying] = useState(false)
     const soundOfEndTimer = new Audio(outOfTimer)
     soundOfEndTimer.volume = 0.1
     soundOfEndTimer.loop = false
@@ -115,7 +114,6 @@ const Timer = () => {
         } 
     },[count])
 
-    
     useEffect(()=>{
         if(longBrake === 0){
             setPlaying(()=>soundOfEndTimer.play())
@@ -232,11 +230,11 @@ const Timer = () => {
                                         <div className="setting">
                                             <FiSettings size={38}/>
                                         </div>
-                                    </div> 
-                                    
+                                    </div>  
                                 }
                                 {defaultClickedFlagBurger ? '' :
                                     <div className="toSetting" onClick={() => {
+                                                window.scrollTo(0,0)
                                                 dispatch(setModalSettingFromTimer(true))
                                                 dispatch(setClickedFlag(true))
                                                 dispatch(setClickedFlagBurger(true))

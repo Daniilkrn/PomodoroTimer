@@ -40,5 +40,4 @@ const ProgressBarAndTimer = ({minutesBlock, refW, minutes, seconds, audioBackgro
     )
 } 
 
-
 export default ProgressBarAndTimer

@@ -1,4 +1,3 @@
-
 import sessionReducers from "./reducers2/sessionSlice";
 import autoPlaySettings from "./reducers2/autoPlaySettings";
 import popUpChecker from "./reducers2/popUpChecker";

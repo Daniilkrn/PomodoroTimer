@@ -1,5 +1,6 @@
 import {GiTomato} from 'react-icons/gi'
 import React from 'react'
+
 const LongTimer = ({countPomodoro, minutes, seconds}) => {
     return(
         <div className="timer_circle">
@@ -14,6 +15,5 @@ const LongTimer = ({countPomodoro, minutes, seconds}) => {
         </div>
     )
 } 
-
 
 export default LongTimer

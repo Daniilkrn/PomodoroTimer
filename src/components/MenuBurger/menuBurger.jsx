@@ -5,11 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const MenuBurger = () => {
 
-    const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
-
     /*setModalSettingFromTimer*/
     const defaultSetModalSettingFromTimer = useSelector(state => state.popUp2.modalSettingFromTimer);
-    const clickedFlag = useSelector(state => state.popUp2.clickedFlag);
     const dispatch = useDispatch();
     
     return (

@@ -16,5 +16,4 @@ const BrakeTimer = ({minutes,seconds,countPomodoro}) => {
     )
 } 
 
-
 export default BrakeTimer

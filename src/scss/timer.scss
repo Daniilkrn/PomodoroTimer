@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@1,200&family=Prompt:wght@200;300&display=swap');
-
     .timer{
         max-width: 60%;
         .desc{
@@ -407,44 +406,25 @@
             }  
     }
 
-
-
-
-    
 @media (max-width: 910px){
-    // body {
-    //     overflow: hidden;
-    // }
     .list_settings{
         padding-top: 0;
         padding-bottom: 40px;
     }
     .settings__container {
         &.burger{
-            height: 830vh;          
+            min-height: 100%;          
         }
     }
     .content_container{
         padding: 20px;
     }
-   .timer{
-    // max-width: 100%;
-   }
     .set_timer{
         .selectors{
             padding-right: 40px;
         }
     }
-    .progress_block{
-       
-      
-        
-    }
-    // .nav-plus-content{
-    //     width: 500px;
-    // }
     .buttons{
-      
         .restart_button{
             padding: 20px 20px !important;
             svg{
@@ -506,7 +486,6 @@
                 margin-right: 0px !important;
                 margin-bottom: 32px !important;
                 padding: 24px 74px !important;
-            
                 svg{
                     padding: 10px !important;
                     width: 40px;

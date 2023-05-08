@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect} from "react"
+import { useState, useRef } from "react"
 import SavePopUp from "../../../UI/savePopUp"
 import {CSSTransition} from "react-transition-group"
-
+import {MdExpandMore} from "react-icons/md"
 import { useSelector, useDispatch } from "react-redux"
 import { setDefaultSession } from "../../../store/reducers2/sessionSlice"
 import { setDefaultBrake } from "../../../store/reducers2/sessionSlice"
@@ -15,9 +15,10 @@ import { setClickedFlag } from "../../../store/reducers2/popUpChecker"
 import { setClickedFlagBurger } from "../../../store/reducers2/popUpChecker"
 import SavePopUp2 from "../../../Pages/savePopUp2"
 import swal from "sweetalert"
-// import { store } from "../../../store/store"
+import Spoiler from "./spoiler"
 
 const ModalSettings = ({setModalSetting,}) => {
+
     const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
     const defaultSetflagToSettingLT = useSelector(state => state.sessions.flagToSettingLT)
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
@@ -26,9 +27,6 @@ const ModalSettings = ({setModalSetting,}) => {
     const defaultLongTimerAutoPlay = useSelector(state => state.autoPlay.flagLongTimer);
     const defaultLongBrake = useSelector(state => state.sessions.countDefaultLongTimer);
     const defaultSetSetterLongTImer = useSelector(state => state.sessions.setterLongTImer)
-    const defaultSetModalSettingFromTimer = useSelector(state => state.popUp2.modalSettingFromTimer)
-    const clickedFlag = useSelector(state => state.popUp2.clickedFlag)
-    let popUp2 = useSelector(state => state.popUp2.checked);
     const dispatch = useDispatch();
     
     const [valueSession, setValueSession] = useState(defaultSession)
@@ -44,8 +42,10 @@ const ModalSettings = ({setModalSetting,}) => {
     /*autoPlayLongBrakeTimer handler*/
     const [autoPlayLongBrake, setAutoPlayLongBrake] = useState(defaultLongTimerAutoPlay)
     /*popUp2 checker state*/
-    const [spanPopUp, setSpanPopUp] = useState(false)
+    const [spanPopUp, ] = useState(false)
     
+    const [stateMoreSettings,setStateMoreSettings] = useState(false)
+
     const nodeRef = useRef(null);
     const regexp = /^[0-9]+$/gm
 
@@ -139,7 +139,7 @@ const ModalSettings = ({setModalSetting,}) => {
             dispatch(setSetterLongTImer(settingSetterLT))
         }
     }
-    console.log(defaultClickedFlagBurger);
+
     return(
             <div className={defaultClickedFlagBurger ? "settings__container burger" : "settings__container"}>
                 {
@@ -164,35 +164,53 @@ const ModalSettings = ({setModalSetting,}) => {
                         <input type="text" value={settingLongTimer} onChange={(e)=>setSettingLongTimer(e.target.value)}/>
                         <p>minutes</p>
                     </div>
-                    <div className="set_autoPlayBrake">
-                        <p>Auto play your brake</p>
-                        <div className="checkbox">
-                            <div className={autoPlayBrake ? "checker_box" : "checker_box_non"}>
-                                <div className="checker" onClick={autoPlayBrakeHandler}></div>
-                            </div>
-                        </div>
+                    <div className="spoiler_settings">
+                        <button className="more" onClick={()=>{
+                                setStateMoreSettings(!stateMoreSettings)
+                            }}>
+                            {!stateMoreSettings ? "More settings" : "hide"}
+                            <MdExpandMore size={30} className={stateMoreSettings ? "icon spoiler" : "icon"}/>
+                        </button>
+                        {
+                            stateMoreSettings ? 
+                            <>
+                            <Spoiler defaultSetflagToSettingLT={defaultSetflagToSettingLT} autoPlayBrake={autoPlayBrake} autoPlayBrakeHandler={autoPlayBrakeHandler}
+                            autoPlayLongBrake = {autoPlayLongBrake} autoPlayLongBrakeHandler={autoPlayLongBrakeHandler} settingSetterLT={settingSetterLT} setSettingSetterLT={setSettingSetterLT}/>
+                            </>
+                            :
+                            null
+                        }
                     </div>
-                    <div className="set_autoPlayLongTimer">
-                        <p>Auto play your long brake</p>
-                        <div className="checkbox">
-                            <div className={!autoPlayLongBrake ? "checker_box_non" : "checker_box"}>
-                                <div className="checker" onClick={autoPlayLongBrakeHandler}></div>
+                    <div className="nonSpoler">
+                            <div className="set_autoPlayBrake">
+                                <p>Auto play your brake</p>
+                                <div className="checkbox">
+                                    <div className={autoPlayBrake ? "checker_box" : "checker_box_non"}>
+                                        <div className="checker" onClick={autoPlayBrakeHandler}></div>
+                                    </div>
+                                </div>
                             </div>
+                            <div className="set_autoPlayLongTimer">
+                                <p>Auto play your long brake</p>
+                                <div className="checkbox">
+                                    <div className={!autoPlayLongBrake ? "checker_box_non" : "checker_box"}>
+                                        <div className="checker" onClick={autoPlayLongBrakeHandler}></div>
+                                    </div>
+                                </div>
+                            </div>
+                            {defaultSetflagToSettingLT ? <p>The value of the counter settings can be changed when you switch to the session timer.</p> :
+                                <div className="set_counterLongTimer">
+                                    <p>Timer setting counter</p>
+                                    <input type="text" value={settingSetterLT} onChange={(e)=>setSettingSetterLT(e.target.value)}/>
+                                </div>
+                            }
                         </div>
-                    </div>
-                    {defaultSetflagToSettingLT ? <p>The value of the counter settings can be changed when you switch to the session timer.</p> :
-                        <div className="set_counterLongTimer">
-                            <p>Timer setting counter</p>
-                            <input type="text" value={settingSetterLT} onChange={(e)=>setSettingSetterLT(e.target.value)}/>
-                        </div>
-                    }
                 </div>
                 <div className="save">
                     <button className="save_button" onClick={saveHandler}>Save</button>
                 </div>
                 <CSSTransition nodeRef={nodeRef} in={savePopUpAction} classNames="alert" timeout={2000} unmountOnExit
-                        onEnter={() => setSavePopUpAction(false)}
-                        >
+                        onEnter={() => setSavePopUpAction(false)}>
                         <div ref={nodeRef}>
                             {
                                 <SavePopUp></SavePopUp>

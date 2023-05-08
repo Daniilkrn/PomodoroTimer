@@ -2,9 +2,6 @@
     &.burger{
         z-index: 111;
         background-color: #47b3e9;
-        position: fixed;
-        overflow: hidden !important;
-        // background-color: unset;
         width: 100vw;
         height: 669vh;
         margin-top: 0px;
@@ -12,8 +9,7 @@
         top: 0;
         right: 0;
         bottom: 0;
-    }
-    
+    } 
 }
 
 .settings__container{
@@ -85,7 +81,6 @@
             height: 60px;
             display: flex;
             border-radius: 1em;
-            // left: 320px;
             margin-top: 10px;
         }
         span::after{
@@ -125,7 +120,6 @@
         align-items: center;
         width: 100%;
         border-radius: 1em;
-        // height: 100%;
         cursor: pointer;
         p:last-child{
             margin-top: 40px;
@@ -134,7 +128,7 @@
         .set_counterLongTimer,.set_brake{
             margin-top: 32px;
             display: flex;
-            width: 40%;
+            width: 70% !important;
             justify-content: flex-start;
             align-items: center;
             p:last-child{
@@ -143,16 +137,20 @@
             }
         }
         .set_counterLongTimer{
+            width: 100% !important;
             p{
                 text-align: left;
             }
         }
         .set_session{
-            width: 100% !important;
+            width: 70% !important;
             margin-top: 20px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
+            p{
+                white-space: nowrap
+            }
             p:last-child{
                 margin-left: 10px;
                 font-size: 12px;
@@ -161,79 +159,166 @@
         .set_longTimer{
             margin-top: 20px;
             display: flex;
-            width: 100% !important;
-            justify-content: center;
+            width: 70% !important;
+            justify-content: flex-start;
             align-items: center;
-
             p:last-child{
                 margin-left: 10px;
                 font-size: 12px;
             }
         }
-        .set_autoPlayLongTimer,.set_autoPlayBrake{
-            width: 50%;
-            margin-top: 20px;
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: row;
-            align-items: flex-start;
-            align-items: center;
-            text-align: left;
-            .checkbox{
-                margin-top: 14px;
-                width: 50%;
+        .nonSpoler{
+            width: 70% !important;
+            .set_autoPlayLongTimer,.set_autoPlayBrake,.set_autoPlayLongTimer{
+                width: 100% !important;
+                margin-top: 20px;
                 display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                align-items: flex-start;
                 align-items: center;
-                justify-content: center;
-                .checker_box{
+                text-align: left;
+                .checkbox{
+                    margin-top: 14px;
+                    width: 30%;
                     display: flex;
-                    flex-direction: row;
-                    background-color: #0a9132;
-                    width: 50%;
-                    border-radius: 1em;
-                    padding: 4px;
-                    justify-content: flex-end;
-                    transition: 0.5s ease;
-                    .checker{
-                        width: 40px;
-                        height: 40px;
-                        background-color: #fff;
-                        border-radius: 2em;
+                    align-items: center;
+                    justify-content: center;
+                    .checker_box{
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 16px;
+                        flex-direction: row;
+                        background-color: #0a9132;
+                        width: 50%;
+                        border-radius: 1em;
+                        padding: 4px;
+                        justify-content: flex-end;
+                        transition: 0.5s ease;
+                        .checker{
+                            width: 40px;
+                            height: 40px;
+                            background-color: #fff;
+                            border-radius: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                        }
+                    }
+                    .checker_box_non{
+                        display: flex;
+                        flex-direction: row;
+                        background-color: #0a9132;
+                        width: 50%;
+                        border-radius: 1em;
+                        padding: 4px;
+                        justify-content: space-between;
+                        background-color: #646966;
+                        transition: 0.5s ease;
+                        .checker{
+                            width: 40px;
+                            height: 40px;
+                            background-color: #fff;
+                            border-radius: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                        }
                     }
                 }
-                .checker_box_non{
-                    display: flex;
-                    flex-direction: row;
-                    background-color: #0a9132;
-                    width: 50%;
-                    border-radius: 1em;
-                    padding: 4px;
-                    justify-content: space-between;
-                    background-color: #646966;
-                    transition: 0.5s ease;
-                    .checker{
-                        width: 40px;
-                        height: 40px;
-                        background-color: #fff;
-                        border-radius: 2em;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 16px;
+            }
+            .set_autoPlayLongTimer{
+                width: 50%;
+                .checkbox{
+                    width: 30%;
+                    .checker_box_non,.checker_box{
+                        width: 50%;
                     }
                 }
             }
         }
-        .set_autoPlayLongTimer{
-            width: 50%;
-            .checkbox{
+        .spoiler_settings{
+            margin: 40px 0px;
+            font-size: 20px;
+            width: 70% !important;
+            .set_autoPlayLongTimer,.set_autoPlayBrake,.set_autoPlayLongTimer{
+                width: 100% !important;
+                margin-top: 20px;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                align-items: flex-start;
+                align-items: center;
+                text-align: left;
+                .checkbox{
+                    margin-top: 14px;
+                    width: 30%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .checker_box{
+                        display: flex;
+                        flex-direction: row;
+                        background-color: #0a9132;
+                        width: 50%;
+                        border-radius: 1em;
+                        padding: 4px;
+                        justify-content: flex-end;
+                        transition: 0.5s ease;
+                        .checker{
+                            width: 40px;
+                            height: 40px;
+                            background-color: #fff;
+                            border-radius: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                        }
+                    }
+                    .checker_box_non{
+                        display: flex;
+                        flex-direction: row;
+                        background-color: #0a9132;
+                        width: 50%;
+                        border-radius: 1em;
+                        padding: 4px;
+                        justify-content: space-between;
+                        background-color: #646966;
+                        transition: 0.5s ease;
+                        .checker{
+                            width: 40px;
+                            height: 40px;
+                            background-color: #fff;
+                            border-radius: 2em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
                 width: 50%;
-                .checker_box_non,.checker_box{
-                    width: 50%;
+                .checkbox{
+                    width: 30%;
+                    .checker_box_non,.checker_box{
+                        width: 50%;
+                    }
+                }
+            }
+            .more{
+                width: 100%;
+                cursor: pointer;
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1em;
+                padding: 8px 16px;
+                .icon.spoiler{
+                    transform: rotate(180deg);
                 }
             }
         }
@@ -254,6 +339,7 @@
         }
     }
     .save{
+        height: 100%;
         display: flex;
         flex-direction: column;
         margin-bottom: 20px;
@@ -303,24 +389,18 @@
         background-color: #5f73b4;
     }
     audio::-webkit-media-controls-timeline {
-            background-color: #B1D4E0;
-            border-radius: 25px;
-            margin-left: 10px;
-            margin-right: 10px;
+        background-color: #B1D4E0;
+        border-radius: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     audio::-webkit-media-controls-panel {
         background-color: #5f73b4;
         border: none;
-      }
-      
-    audio::-webkit-media-controls-time-remaining-display {
-        color: #fff;
     }
     .audioBlock{
         background-color: #d5d7dd;
         display: flex;
-        // justify-content: center;
-        // align-items: center;
         min-width: 380px;
         border-radius: 1em;
         padding: 2px;
@@ -331,9 +411,6 @@
             padding: 0px;
             display: flex;
             justify-content: center;
-            .musicBar{
-
-            }
             .timingMusicPlayer{
                 position: absolute;
                 top: 40px;

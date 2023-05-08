@@ -1,5 +1,5 @@
-// import '../../scss/timer.scss'
-const StartButton = ({isStart,setStart, setConfirm , isConfirm}) => {
+const StartButton = ({setStart}) => {
+    
     const start = () => {
         setStart(true)
     }
@@ -10,6 +10,5 @@ const StartButton = ({isStart,setStart, setConfirm , isConfirm}) => {
         </div>
     )
 } 
-
 
 export default StartButton

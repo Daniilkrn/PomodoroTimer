@@ -6,8 +6,6 @@
 
 body {
     height: 100%;
-    // overflow-x: hidden;
-    
 }
 
 a {
@@ -21,10 +19,6 @@ img {
 
 li {
     list-style-type: none;
-}
-
-.App{
-    
 }
 
 main {
@@ -95,6 +89,10 @@ header{
     justify-content: center; 
 }
 
+.spoiler_settings{
+    display: none !important;
+}
+
 .header__container{
     justify-content: flex-start !important;
     align-items: center;
@@ -162,6 +160,13 @@ header{
                 }
             }
         }
+        .spoiler_settings{
+            display: block !important;
+        }
+        .nonSpoler{
+            display: none !important;
+        }
+        
     }
 }
 
@@ -170,7 +175,6 @@ header{
     justify-content: center;
     align-items: center;
     width: 1440px; 
-    
 }
 
 [class*="__container"]{
@@ -233,9 +237,6 @@ header{
 
 @media (max-width: 850px){
     .settings__container {
-        &.burger{
-
-        }
         .list_settings{
             .set_autoPlayBrake{
                 .checkbox{
@@ -270,7 +271,6 @@ header{
             .percent{
                 font-size: 20px !important;
             }
-  
             .desc{
                 p{
                     font-size: calc(18px + 4 * (100vw / 850)) !important
@@ -323,9 +323,6 @@ header{
         }
     }
     .settings__container {
-        &.burger{
-
-        }
         .list_settings{
             .set_autoPlayBrake{
                 .checkbox{
@@ -353,9 +350,6 @@ header{
 
 @media (max-width: 400px){
     .settings__container {
-        &.burger{
-
-        }
         .list_settings{
             .set_autoPlayBrake{
                 .checkbox{

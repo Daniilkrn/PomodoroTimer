@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import { useState, useRef, } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import '../../scss/progressBar.scss'
 
 const ProgressBar = ({minutesBlock, startedTimer, brakeBlock, longBrakePB}) => {
+
     const defaultSession = useSelector(state => state.sessions.countDefaultSession);
     const defaultBrake = useSelector(state => state.sessions.countDefaultBrake);
     const defaultLongBrake = useSelector(state => state.sessions.countDefaultLongTimer);
-    const dispatch = useDispatch();
 
     const [filled,setFilled] = useState(0)
     const [filledBrake, setFilledBrake] = useState(0)
@@ -18,8 +18,7 @@ const ProgressBar = ({minutesBlock, startedTimer, brakeBlock, longBrakePB}) => {
     useEffect(()=>{
         if(startedTimer && minutesBlock > 0){
             setFilled(filled + (refWidth.current.clientWidth / parseInt(defaultSession * 60)))
-            setPercent(percentCount + 100/(defaultSession * 60))
-            
+            setPercent(percentCount + 100/(defaultSession * 60))  
         } 
         else {
             setFilled(0)

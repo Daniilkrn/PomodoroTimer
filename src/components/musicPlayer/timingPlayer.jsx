@@ -1,7 +1,7 @@
 import {CgLoadbarSound} from 'react-icons/cg'
 import { useEffect, useState } from "react"
 
-const TimingPlayer = ({minutes,seconds,minutesBlock,audioBackground, playBackground, musicDependencies}) => {
+const TimingPlayer = ({minutes,seconds,audioBackground, playBackground, musicDependencies}) => {
 
     useEffect(() => {
         if(playBackground) srcFn(audioBackground.getAttribute('src'))
@@ -44,6 +44,5 @@ const TimingPlayer = ({minutes,seconds,minutesBlock,audioBackground, playBackgro
         </div>
     )
 } 
-
 
 export default TimingPlayer

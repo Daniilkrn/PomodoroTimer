@@ -6,9 +6,9 @@ import ModalSettings from './modalSetting/modalSetting';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { setClickedFlagBurger } from '../../store/reducers2/popUpChecker';
 
 const MenuNav = ({refHeight}) => {
+
     const defaultClickedFlagBurger = useSelector(state => state.popUp2.clickedFlagBurger)
     const defaultSetModalSettingFromTimer = useSelector(state => state.popUp2.modalSettingFromTimer)
     const clickedFlag = useSelector(state => state.popUp2.clickedFlag)
@@ -50,6 +50,5 @@ const MenuNav = ({refHeight}) => {
         </div>
     )
 } 
-
 
 export default MenuNav

@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-
 export const autoPlaySettings = createSlice({
   name: 'sessions',
   initialState: { 

@@ -3,15 +3,18 @@ import {GiTomato} from 'react-icons/gi'
 // import Timer from './timer';
 import MenuNav from '../components/MenuNav/menuNav';
 import { Outlet } from 'react-router-dom';
-import MusicPlayer from '../components/musicPlayer/musicPlayer';
+// import MusicPlayer from '../components/musicPlayer/musicPlayer';
 import { useRef, React} from 'react';
 import { useSelector } from 'react-redux';
 import MenuBurger from './MenuBurger/menuBurger';
 
 function Layout() {
+
     const refApp = useRef()
+
     /*musicTimerDependencies*/
     const defaultMusicDependencies = useSelector(state => state.musicDependencies.startedDefault)
+
     return (
         <div className="layout" ref={refApp}>
             <header>
@@ -43,6 +46,6 @@ function Layout() {
             </footer>
         </div>
     );
-  }
+}
   
-  export default Layout;
+export default Layout;

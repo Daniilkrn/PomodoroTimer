@@ -6,5 +6,4 @@ const StopButton = ({}) => {
     )
 } 
 
-
 export default StopButton
