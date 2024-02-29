@@ -1,0 +1,175 @@
+@media (max-width: 1500px){
+    .footer__container{
+        font-size: calc(16px + 12 * (100vw / 1040))
+    }
+    .mainPrinciples{
+        li{
+            margin-bottom: 12px;
+            text-align: left;
+            font-size: 28px;
+            position: relative;
+            margin-left: 40px;
+            padding: 0px 40px;
+        }
+    }
+    .about{
+        padding: 0px 40px;
+    }
+}
+
+@media (min-width: 850px) {
+    .nav{
+        .toSetting{
+            display: none !important;
+        }
+    }    
+}
+
+@media (max-width: 850px){
+    .settings__container {
+        .list_settings{
+            .set_autoPlayBrake{
+                .checkbox{
+                    .checker_box{
+                        width: 55%;
+                    }
+                    .checker_box_non{
+                        width: 60%;
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
+                .checkbox{
+                    .checker_box{
+                        width: 55%;
+                    }
+                    .checker_box_non{
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+    .nav{
+        .toSetting2{
+            display: none !important;
+        }
+    }
+    .content__container{
+        .timer{
+            max-width: 100%;
+            width: 100%;
+            .percent{
+                font-size: 20px !important;
+            }
+            .desc{
+                p{
+                    font-size: calc(18px + 4 * (100vw / 850)) !important
+                }
+            }
+            .nav-plus-content{
+                .counterPomodoro{
+                    font-size: 20px !important;
+                }
+                .timer_body{
+                    font-size: 80px ;
+                }
+            }
+            .nav{
+                padding: 30px 40px;
+                .set_timer{
+                    .toSetting{
+                        p{
+                            display: none !important;
+                        }
+                        .setting{
+                            width: auto !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        padding: 0px 40px;
+    }
+}
+
+@media (max-width: 590px){
+    .list_settings{
+        .set_session{
+            width: auto !important;
+        }
+        .set_brake{
+            width: auto !important;
+        }
+        .set_longTimer{
+            width: auto !important;
+        }
+        .set_autoPlayBrake{
+            width: auto !important;
+        }
+        .set_autoPlayLongTimer{
+            width: auto !important;
+        }
+        .set_counterLongTimer{
+            width: auto !important;
+        }
+    }
+    .settings__container {
+        .list_settings{
+            .set_autoPlayBrake{
+                .checkbox{
+                    .checker_box{
+                        min-width: 70px;
+                    }
+                    .checker_box_non{
+                        min-width: 70px;
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
+                .checkbox{
+                    .checker_box{
+                        min-width: 70px;
+                    }
+                    .checker_box_non{
+                        min-width: 70px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .settings__container {
+        .list_settings{
+            .set_autoPlayBrake{
+                .checkbox{
+                    .checker_box{
+                        min-width: 60px;
+                    }
+                    .checker_box_non{
+                        min-width: 60px;
+                    }
+                }
+            }
+            .set_autoPlayLongTimer{
+                .checkbox{
+                    .checker_box{
+                        min-width: 60px;
+                    }
+                    .checker_box_non{
+                        min-width: 60px
+                    }
+                }
+            }
+        }
+    }
+    .nav{
+        .set_timer{
+            display: none !important;
+        }
+    }
+}

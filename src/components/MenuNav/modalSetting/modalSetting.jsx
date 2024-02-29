@@ -152,23 +152,23 @@ const ModalSettings = ({setModalSetting,}) => {
                     <div className="set_session">
                         <p>Session time</p>
                         <input type="text"  value={valueSession} onChange={(e)=>setValueSession(e.target.value)}/>
-                        <p>minutes</p>
+                        <p className="list-settings__unit">minutes</p>
                     </div>
                     <div className="set_brake">
-                        <p>Brake time</p>
+                        <p className="set-brake__desc">Brake time</p>
                         <input type="text" value={settingBrake} onChange={(e)=>setSettingBrake(e.target.value)}/>
-                        <p>minutes</p>
+                        <p className="list-settings__unit">minutes</p>
                     </div>
                     <div className="set_longTimer">
                         <p>Long brake</p>
                         <input type="text" value={settingLongTimer} onChange={(e)=>setSettingLongTimer(e.target.value)}/>
-                        <p>minutes</p>
+                        <p className="list-settings__unit">minutes</p>
                     </div>
                     <div className="spoiler_settings">
                         <button className="more" onClick={()=>{
                                 setStateMoreSettings(!stateMoreSettings)
                             }}>
-                            {!stateMoreSettings ? "More settings" : "hide"}
+                            {!stateMoreSettings ? "More settings" : "Hide"}
                             <MdExpandMore size={30} className={stateMoreSettings ? "icon spoiler" : "icon"}/>
                         </button>
                         {
@@ -204,7 +204,7 @@ const ModalSettings = ({setModalSetting,}) => {
                                     <input type="text" value={settingSetterLT} onChange={(e)=>setSettingSetterLT(e.target.value)}/>
                                 </div>
                             }
-                        </div>
+                    </div>
                 </div>
                 <div className="save">
                     <button className="save_button" onClick={saveHandler}>Save</button>

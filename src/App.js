@@ -1,4 +1,5 @@
 import '../src/scss/app.scss';
+import '../src/scss/media.scss'
 import { React } from 'react';
 import { HashRouter} from 'react-router-dom';
 import {Route,Routes} from 'react-router-dom'
